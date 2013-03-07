@@ -27,8 +27,11 @@ define([], function(){
 			}
 		},
 		getValue: function(callback){
+			var value;
 			if(this.hasOwnProperty("value")){
-				callback(this.value);
+				value = this.value;
+				callback && callback(value);
+				return value;
 			}
 		},
 		get: function(key, callback){
