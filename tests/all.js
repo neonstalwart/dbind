@@ -1,0 +1,3 @@
+define(['./api/Binding'], function () {
+
+});

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Browser test runner</title>
+		<script>
+			var dojoConfig = (function () {
+				var basePath = location.pathname.replace(/[^\/]+$/, '');
+				return {
+					async: 1,
+					baseUrl: basePath + '../../',
+					tlmSiblingOfDojo: 0,
+					packages: [
+						// 'teststack' infers 'teststack/main' when this is a package
+						'teststack'
+					],
+					// teststack uses 'dojo-ts' to use it's own copy of dojo
+					map: {
+						teststack: {
+							'dojo-ts': 'teststack/dojo'
+						}
+					},
+					// load the dbind tests runner
+					deps: [ 'dbind/tests/index' ]
+				};
+			})();
+		</script>
+		<script src="../../teststack/dojo/dojo.js"></script>
+	</head>
+</html>
