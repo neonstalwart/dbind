@@ -53,26 +53,23 @@ else {
 		// Browsers to run integration testing against. Note that version numbers must be strings if used with Sauce
 		// OnDemand. Available options are browserName, version, platform, and platformVersion
 		environments: [
+			{ browserName: 'internet explorer', platform: 'Windows 2003', version: ['7', '8'] },
 			{ browserName: 'internet explorer', platform: 'Windows 2008', version: '9' },
-			// Firefox 18 OSX Mountain Lion is currently unavailable on Sauce Labs
-			// { browserName: 'firefox', version: '18', platform: [ 'Windows 2008', 'Mac 10.6' ] },
+			// { browserName: 'firefox', version: '19', platform: [ 'Windows 2008', 'Mac 10.6' ] },
 			// Sauce Labs recommend not specifying a version of chrome
-			{ browserName: 'chrome', platform: [ 'Windows 2008'/*, 'Mac 10.8'*/ ] }
-			// { browserName: 'safari', version: '6', platform: 'Mac 10.8' }
+			{ browserName: 'chrome', platform: [ 'Windows 2008', 'Mac 10.8' ] },
+			{ browserName: 'safari', version: '6', platform: 'Mac 10.8' }
 		],
 
 		// Maximum number of simultaneous integration tests that should be executed on the remote WebDriver service
-		maxConcurrency: 2,
+		maxConcurrency: 3,
 
 		// Whether or not to start Sauce Connect before running tests
 		useSauceConnect: true,
 
 		// Connection information for the remote WebDriver service. If using Sauce Labs, keep your username and password
-		// in the SAUCE_USERNAME and SAUCE_ACCESS_KEY environment variables unless you are sure you will NEVER be
-		// publishing this configuration file somewhere
+		// in the SAUCE_USERNAME and SAUCE_ACCESS_KEY environment variables.
 		webdriver: {
-			/*username: 'username',
-			accessKey: 'access-key-here',*/
 			host: 'localhost',
 			port: 4444
 		},
