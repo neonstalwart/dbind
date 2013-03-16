@@ -143,7 +143,7 @@ define([
 				}
 			},
 
-			'#then': {
+			'#receive': {
 				'notifies callbacks of value changes': function () {
 					function callback(value) {
 						results = value;
@@ -155,7 +155,7 @@ define([
 						value = {},
 						bound = new Binding(value);
 
-					bound.then(callback);
+					bound.receive(callback);
 					assert.strictEqual(results, value, 'callback is called with initial value');
 
 					bound.put(a);
@@ -180,7 +180,7 @@ define([
 						changed = {},
 						bound = new Binding(value);
 
-					bound.then(callback);
+					bound.receive(callback);
 					assert.strictEqual(1, called, 'callback is called with initial value');
 
 					bound.get('nested').put(changed);
