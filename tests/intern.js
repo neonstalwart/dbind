@@ -9,30 +9,30 @@ if (typeof process !== 'undefined' && typeof define === 'undefined') {
 		baseUrl: baseUrl,
 		tlmSiblingOfDojo: 0,
 		packages: [
-			'teststack'
+			'intern'
 		],
 		map: {
-			teststack: {
-				'dojo-ts': 'teststack/dojo'
+			intern: {
+				'dojo-ts': 'intern/dojo'
 			}
 		},
-		deps: [ 'require', 'teststack/lib/args' ],
+		deps: [ 'require', 'intern/lib/args' ],
 		callback: function (require, args) {
 			if (!args.config) {
-				args.config = 'dbind/tests/teststack';
+				args.config = 'dbind/tests/intern';
 			}
-			require([ 'teststack/runner' ]);
+			require([ 'intern/runner' ]);
 		}
 	};
-	// load teststack's dojo to load everything
-	require(path.join(baseUrl, 'teststack', 'dojo', 'dojo'));
+	// load intern's dojo to load everything
+	require(path.join(baseUrl, 'intern', 'dojo', 'dojo'));
 }
 else {
 	define({
 		// The port on which the instrumenting proxy will listen
 		proxyPort: 9000,
 
-		// A fully qualified URL to the teststack proxy
+		// A fully qualified URL to the intern proxy
 		proxyUrl: 'http://localhost:9000/',
 
 		// Default desired capabilities for all environments. Individual capabilities can be overridden by any of the
@@ -82,6 +82,8 @@ else {
 				'dbind'
 			]
 		},
+		// A regular expression matching URLs to files that should not be included in code coverage analysis
+		//excludeInstrumentation: /^intern\/dojo\//,
 
 		// Non-functional test suite(s) to run in each browser
 		suites: [ 'dbind/tests/all' ],

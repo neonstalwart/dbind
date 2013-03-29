@@ -8,8 +8,8 @@ env:
     - SAUCE_USERNAME: dbind-ci
     - SAUCE_ACCESS_KEY: ac109697-5fc0-42e1-8a16-8588299d4e60
 install:
-  - git clone --recursive -b geezer https://github.com/csnover/dojo2-teststack.git ../teststack
-  - cd ../teststack
+  - git clone --recursive -b geezer https://github.com/csnover/dojo2-teststack.git ../intern
+  - cd ../intern
   - npm install --production
   - cd ..
-script: node dbind/tests/teststack
+script: node dbind/tests/intern

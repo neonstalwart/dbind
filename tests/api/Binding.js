@@ -1,6 +1,6 @@
 define([
-	'teststack!object',
-	'teststack/assert',
+	'intern!object',
+	'intern/assert',
 	'dbind/bind'
 ], function (test, assert, bind) {
 

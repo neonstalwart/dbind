@@ -11,13 +11,13 @@
 					baseUrl: basePath + '../../',
 					tlmSiblingOfDojo: 0,
 					packages: [
-						// 'teststack' infers 'teststack/main' when this is a package
-						'teststack'
+						// 'intern' infers 'intern/main' when this is a package
+						'intern'
 					],
-					// teststack uses 'dojo-ts' to use it's own copy of dojo
+					// intern uses 'dojo-ts' to use it's own copy of dojo
 					map: {
-						teststack: {
-							'dojo-ts': 'teststack/dojo'
+						intern: {
+							'dojo-ts': 'intern/dojo'
 						}
 					},
 					// load the dbind tests runner
@@ -25,6 +25,6 @@
 				};
 			})();
 		</script>
-		<script src="../../teststack/dojo/dojo.js"></script>
+		<script src="../../intern/dojo/dojo.js"></script>
 	</head>
 </html>
